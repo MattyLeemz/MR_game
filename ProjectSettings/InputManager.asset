@@ -297,8 +297,8 @@ InputManager:
     m_Name: Oculus_GearVR_LThumbstickX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
+    negativeButton: left
+    positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
@@ -313,8 +313,8 @@ InputManager:
     m_Name: Oculus_GearVR_LThumbstickY
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
+    negativeButton: down
+    positiveButton: up
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
@@ -329,8 +329,8 @@ InputManager:
     m_Name: Oculus_GearVR_RThumbstickX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: left
-    positiveButton: right
+    negativeButton: 
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
@@ -345,8 +345,8 @@ InputManager:
     m_Name: Oculus_GearVR_RThumbstickY
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: down
-    positiveButton: up
+    negativeButton: 
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
