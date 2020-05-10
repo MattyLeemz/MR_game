@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class CameraLook : MonoBehaviour
 {
+    //gun stuff
+    public GameObject gun;
+    public GameObject bullet;
+
+    public float fireRate;
+    float bufferTime = 0f;
+
     public float mouseSensitivity = 100f;
 
     public Transform playerBody;
@@ -27,5 +34,18 @@ public class CameraLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+
+        bufferTime += Time.deltaTime;
+        if (Input.GetMouseButton(0))
+        {
+            if(bufferTime > fireRate)
+            {
+                GameObject shot = Instantiate(bullet);
+                shot.transform.position = gun.transform.position;
+                shot.transform.forward = this.transform.forward;
+                shot.transform.Translate(Vector3.forward * 20 * Time.deltaTime);
+                bufferTime = 0f;
+            }
+        }
     }
 }
