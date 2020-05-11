@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 
     public bool GameIsPaused = false;
 
+   
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -15,12 +16,15 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused == true)
             {
                 Resume();
+                
+
                 // Debug.Log("Trying to resume here." + GameIsPaused);
             }
             else
             {
                 // Debug.Log("Trying to pause here" + GameIsPaused);
                 Pause();
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }
@@ -29,7 +33,9 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
+        
     }
 
     public void Pause()

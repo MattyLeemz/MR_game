@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraLook : MonoBehaviour
 {
+   
+    
+
     //gun stuff
     public GameObject gun;
     public GameObject bullet;
+    
 
     public float fireRate;
     float bufferTime = 0f;
@@ -16,11 +21,14 @@ public class CameraLook : MonoBehaviour
     public Transform playerBody;
 
     float xRotation = 0f;
+   
 
     //Start is called before the first frame update
     void Start()
+
     {
         Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     // Update is called once per frame
@@ -47,5 +55,7 @@ public class CameraLook : MonoBehaviour
                 bufferTime = 0f;
             }
         }
+        
+
     }
 }
