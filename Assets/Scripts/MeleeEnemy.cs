@@ -54,7 +54,18 @@ public class MeleeEnemy : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             Debug.Log("I have hit " + collision.transform.name);
+            player.GetComponent<Player>().ChangeHealth(-10);
+            
             //Destroy(this.gameObject);
+        }
+
+        if (collision.transform.tag == "bullet")
+        {
+            ChangeHealth(-20);
+            if(currentHealth <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

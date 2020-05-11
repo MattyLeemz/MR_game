@@ -540,7 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  speed: 1
+  speed: 5
   healthBar: {fileID: 1354645681844331141}
   anim: {fileID: 1354645683042255203}
   player: {fileID: 0}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MonsterSpawner : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class MonsterSpawner : MonoBehaviour
         {
             game_timer = Game_Time;
             spawning = false;
+            SceneManager.LoadScene("GameOverScreen");
         }
 
 

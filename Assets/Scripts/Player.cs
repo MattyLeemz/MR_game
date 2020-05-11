@@ -6,6 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -31,26 +32,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (currentHealth <= 0)
         {
-            ChangeHealth(-20);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ChangeHealth(10);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ChangeInk(-20);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            ChangeInk(10);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            level.AddExp(100);
+            Die();
         }
     }
 
@@ -59,7 +43,7 @@ public class Player : MonoBehaviour
         Debug.Log("LEVEL UP!");
     }
 
-    void ChangeHealth(int amount)
+    public void ChangeHealth(int amount)
     {
         currentHealth += amount;
         healthBar.SetBarValue(currentHealth);
@@ -69,6 +53,11 @@ public class Player : MonoBehaviour
     {
         currentInk += amount;
         inkBar.SetBarValue(currentInk);
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene("GameOverScreen");
     }
 
 }
